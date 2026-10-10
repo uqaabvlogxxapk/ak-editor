@@ -1,0 +1,6 @@
+{
+  "name": "AK EDITOR",
+  "description": "Professional AI video editing app with multi-track timeline, AI captions, chroma key, filters, audio studio, templates, and 4K export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

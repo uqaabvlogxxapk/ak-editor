@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AK EDITOR</string>
+    <string name="default_web_client_id" translatable="false">915858065600-foue8apnctsg0sb264uaou4fm8737af4.apps.googleusercontent.com</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="new_project">New Project</string>
+    <string name="projects_title">My Projects</string>
+    <string name="templates_title">Templates</string>
+    <string name="export_video">Export Video</string>
+</resources>

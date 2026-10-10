@@ -1,0 +1,98 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with plan details",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "User ID matching Firebase Auth UID"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Display name"
+        },
+        "isPro": {
+          "type": "boolean",
+          "description": "Pro subscription status"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp ISO string"
+        }
+      },
+      "required": ["id", "email", "displayName", "isPro", "createdAt"]
+    },
+    "Project": {
+      "title": "Project",
+      "description": "Video project with timeline and media settings",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Project ID"
+        },
+        "userId": {
+          "type": "string",
+          "description": "Owner user ID"
+        },
+        "title": {
+          "type": "string",
+          "description": "Project title"
+        },
+        "aspectRatio": {
+          "type": "string",
+          "description": "Aspect ratio, e.g. 16:9, 9:16, 1:1, 4:5"
+        },
+        "resolution": {
+          "type": "string",
+          "description": "Export target resolution (720p, 1080p, 2K, 4K)"
+        },
+        "fps": {
+          "type": "integer",
+          "description": "Target frame rate (24, 30, 60)"
+        },
+        "durationMs": {
+          "type": "integer",
+          "description": "Total duration in milliseconds"
+        },
+        "clipCount": {
+          "type": "integer",
+          "description": "Number of media clips"
+        },
+        "trackCount": {
+          "type": "integer",
+          "description": "Number of active tracks"
+        },
+        "projectDataJson": {
+          "type": "string",
+          "description": "Full serialized project timeline specification"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation ISO date"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last modified ISO date"
+        }
+      },
+      "required": ["id", "userId", "title", "aspectRatio", "resolution", "fps", "durationMs", "clipCount", "trackCount", "projectDataJson", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Private user profile collection"
+    },
+    "/users/{userId}/projects/{projectId}": {
+      "schema": "Project",
+      "description": "User's video editing projects and timelines"
+    }
+  }
+}
